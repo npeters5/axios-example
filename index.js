@@ -1,5 +1,5 @@
 
-const URL = 'https://petdibs.herokuapp.com/pets';
+const URL = 'https://jsonplaceholder.typicode.com/todos/';
 
 const reportStatus = (message) => {
   $('#status-message').html(message);
@@ -14,7 +14,7 @@ const loadPets = () => {
     .then((response) => {
       reportStatus('Successfully loaded Pets');
       response.data.forEach((pet) => {
-        petList.append(`<li>${pet.name}</li>`);
+        petList.append(`<li>${pet.title}</li>`);
       });
     })
     .catch((error) => {
